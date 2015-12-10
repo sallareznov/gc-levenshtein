@@ -1,0 +1,19 @@
+## Languages
+* Ada
+* C
+* C++
+* COBOL (?)
+* CoffeeScript
+* Eiffel
+* Erlang
+* Go
+* Haskell
+* Java
+* Lisp
+* Ocaml
+* Pascal
+* Perl
+* Python
+* Ruby
+* Scala
+* Smalltalk
