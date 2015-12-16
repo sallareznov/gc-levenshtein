@@ -41,35 +41,30 @@ let dynamic_distance u v =
 	in
 	table.(n).(m)
 
-let open_file filepath = open_in filepath
-
-let get_next_words _in =
-	try
-	 	(input_line _in, input_line _in)
-	with
-		| End_of_file -> close_in _in; ("", "")
-
-let calculate_distance_from_file filepath distance =
-	let _in = open_file filepath
+let calculate_distance_from_file filepath =
+	let _in = open_in filepath
 	in
-	while true do
-		let (word1, word2) = get_next_words _in
-		in
-		distance word1 word2
-	done
+	try
+		while true do
+			let word1 = input_line _in and word2 = input_line _in
+			in
+			Printf.printf "Word1 : %s\n" word1;
+			Printf.printf "Word2 : %s\n" word2;
+			Printf.printf "Recursive distance : %d\n" (recursive_distance word1 word2);
+			Printf.printf "Dynamic distance : %d\n" (dynamic_distance word1 word2);
+			Printf.printf "\n"
+		done
+	with
+		| End_of_file -> close_in _in
 
 let usage() = Printf.printf "Browse the file README.md at the root of the project to know how to use this program\n"
 
 let _ =
-		if ((Array.length Sys.argv) < 3) then
+		if ((Array.length Sys.argv) < 2) then
 			usage()
 		else begin
-    	if (Sys.argv.(2) = "--rec") then
-      	calculate_distance_from_file Sys.argv.(1) recursive_distance
-    	else if (Sys.argv.(2) = "--dyn") then
-      	calculate_distance_from_file Sys.argv.(1) dynamic_distance
-			else
-				usage();
+			let filepath = Sys.argv.(1)
+			in
+			calculate_distance_from_file filepath;
+			Printf.printf "DONE !"
 		end
-
-		Printf.printf "DONE !"

@@ -1,9 +1,9 @@
 #include "../include/levenshtein.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int recursive_distance(char *word1, int length_word1, char *word2, int length_word2) {
-  printf("Recursive\n");
   if (length_word1 == 0)
     return length_word2;
   else if (length_word2 == 0)
@@ -31,28 +31,31 @@ int dynamic_distance(char *word1, int length_word1, char *word2, int length_word
   return 0;
 }
 
-FILE *read_file(char *filepath) {
-  return fopen(filepath, "r");
-}
-
 void get_word(FILE *fd, char *word, int *index) {
   char c;
 
   *index = 0;
-  while ((c == fgetc(fd)) != '\n') {
+  while ((c = fgetc(fd)) != '\n') {
+    printf("%c\n", c);
     word[*index++] = c;
   }
 }
 
-int calculate_distance_from_file(char *filepath, int (*distance_function)(char *, int,  char *, int)) {
+void calculate_distance_from_file(char *filepath) {
   FILE *fd;
   char *word1, *word2;
   int length_word1, length_word2;
 
-  fd = read_file(filepath);
+  fd = fopen(filepath, "r");
+  word1 = malloc(sizeof(char *));
+  word2 = malloc(sizeof(char *));
   get_word(fd, word1, &length_word1);
   get_word(fd, word2, &length_word2);
-  return distance_function(word1, length_word1, word2, length_word2);
+  printf("Word1 : %s\n", word1);
+  printf("Word2 : %s\n", word2);
+  printf("Recursive distance : %d\n", recursive_distance(word1, length_word1, word2, length_word2));
+  recursive_distance(word1, length_word1, word2, length_word2);
+  printf("\n");
 }
 
 void usage() {
@@ -60,13 +63,14 @@ void usage() {
 }
 
 int main(int argc, char *argv[]) {
-  if (argc < 3) {
+  char *filepath;
+
+  if (argc < 2) {
     usage();
     return 1;
   }
-  if (strcmp(argv[2], "--rec") == 0)
-    calculate_distance_from_file(argv[1], &recursive_distance);
-  else if (strcmp(argv[2], "--dyn") == 0)
-    calculate_distance_from_file(argv[1], &dynamic_distance);
+  filepath = argv[1];
+  calculate_distance_from_file(filepath);
+  printf("DONE\n");
   return 0;
 }

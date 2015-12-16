@@ -6,6 +6,6 @@
 
 int recursive_distance(char *word1, int length_word1, char *word2, int length_word2);
 int dynamic_distance(char *word1, int length_word1, char *word2, int length_word2);
-int calculate_distance_from_file(char *filepath, int (*distance_function)(char *, int,  char *, int));
+void calculate_distance_from_file(char *filepath);
 
 #endif

@@ -1,5 +1,6 @@
 CC	= gcc
-CFLAGS	= -Wall -ansi
+CFLAGS	= -Wall -Werror -ansi -pedantic -std=c99
+CFLAGS += -D_XOPEN_SOURCE=500
 CFLAGS += -g
 
 HDR_DIR = include
@@ -17,10 +18,10 @@ COMPILED_BINARIES	= levenshtein
 all: $(COMPILED_OBJECTS) $(COMPILED_BINARIES)
 
 levenshtein.o: $(SRC_DIR)/levenshtein.c
-	$(CC) $(CFLAGS) -c $(SRC_DIR)/levenshtein.c -o $(OBJ_DIR)/levenshtein.o $(INCDIR)
+	$(CC) $(CFLAGS) -c $(SRC_DIR)/levenshtein.c -o $(OBJ_DIR)/levenshtein.o
 
 levenshtein: $(OBJ_DIR)/levenshtein.o
-	$(CC) $(CFLAGS) $(OBJ_DIR)/levenshtein.o -o $(BIN_DIR)/levenshtein $(LIBS)
+	$(CC) $(CFLAGS) $(OBJ_DIR)/levenshtein.o -o $(BIN_DIR)/levenshtein
 
 .PHONY: clean mrproper
 
