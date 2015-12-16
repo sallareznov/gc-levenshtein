@@ -58,7 +58,7 @@ let calculate_distance_from_file filepath distance =
 		distance word1 word2
 	done
 
-let usage() = Printf.printf "READ THE F****** MANUAL !!! (README.md)\n"
+let usage() = Printf.printf "Browse the file README.md at the root of the project to know how to use this program\n"
 
 let _ =
 		if ((Array.length Sys.argv) < 3) then

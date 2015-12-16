@@ -3,6 +3,7 @@
 #include <string.h>
 
 int recursive_distance(char *word1, int length_word1, char *word2, int length_word2) {
+  printf("Recursive\n");
   if (length_word1 == 0)
     return length_word2;
   else if (length_word2 == 0)
@@ -30,12 +31,32 @@ int dynamic_distance(char *word1, int length_word1, char *word2, int length_word
   return 0;
 }
 
+FILE *read_file(char *filepath) {
+  return fopen(filepath, "r");
+}
+
+void get_word(FILE *fd, char *word, int *index) {
+  char c;
+
+  *index = 0;
+  while ((c == fgetc(fd)) != '\n') {
+    word[*index++] = c;
+  }
+}
+
 int calculate_distance_from_file(char *filepath, int (*distance_function)(char *, int,  char *, int)) {
-  return 0;
+  FILE *fd;
+  char *word1, *word2;
+  int length_word1, length_word2;
+
+  fd = read_file(filepath);
+  get_word(fd, word1, &length_word1);
+  get_word(fd, word2, &length_word2);
+  return distance_function(word1, length_word1, word2, length_word2);
 }
 
 void usage() {
-  printf("READ THE F****** MANUAL !!! (README.md)\n");
+  printf("Browse the file README.md at the root of the project to know how to use this program\n");
 }
 
 int main(int argc, char *argv[]) {
