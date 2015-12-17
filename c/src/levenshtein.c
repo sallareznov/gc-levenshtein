@@ -18,7 +18,7 @@ int recursive_distance(char *word1, int length_word1, char *word2, int length_wo
     if (first_letter_word1 == first_letter_word2)
       return recursive_distance(subword1, length_word1 - 1, subword2, length_word2 - 1);
     else {
-      return MAX ((MAX (recursive_distance(subword1, length_word1 - 1, word2, length_word2), recursive_distance(word1, length_word1, subword2, length_word2 - 1))), (recursive_distance(subword1, length_word1 - 1, subword2, length_word2 - 1)));
+      return 1 + MIN ((MIN (recursive_distance(subword1, length_word1 - 1, word2, length_word2), recursive_distance(word1, length_word1, subword2, length_word2 - 1))), (recursive_distance(subword1, length_word1 - 1, subword2, length_word2 - 1)));
     }
   }
 }

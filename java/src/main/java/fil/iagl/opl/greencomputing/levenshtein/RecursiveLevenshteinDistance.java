@@ -1,4 +1,4 @@
-package levenshtein;
+package fil.iagl.opl.greencomputing.levenshtein;
 
 public class RecursiveLevenshteinDistance implements LevenshteinDistance {
 
@@ -18,7 +18,7 @@ public class RecursiveLevenshteinDistance implements LevenshteinDistance {
 			if (firstLetterWord1 == firstLetterWord2)
 				return calculateDistance(subWord1, subWord2);
 			else
-				return Math.min(Math.min(calculateDistance(subWord1, word2), calculateDistance(word1, subWord2)),
+				return 1 + Math.min(Math.min(calculateDistance(subWord1, word2), calculateDistance(word1, subWord2)),
 						calculateDistance(subWord1, subWord2));
 		}
 	}

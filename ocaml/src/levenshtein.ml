@@ -9,7 +9,7 @@ let rec recursive_distance u v =
 	else begin
 		let u' = String.sub u 1 (n - 1) and v' = String.sub v 1 (m - 1)
 		in
-		if Char.uppercase u.[0] = Char.uppercase v.[0] then
+		if u.[0] = v.[0] then
 			recursive_distance u' v'
 		else
 			1 + (min (min (recursive_distance u' v') (recursive_distance u v')) (recursive_distance u' v))
@@ -28,7 +28,7 @@ let build_table u v =
 			if j = 0 then
 				table.(i).(j) <- i
 			else
-			if Char.uppercase u.[i-1] = Char.uppercase v.[j-1] then
+			if u.[i-1] = v.[j-1] then
 				table.(i).(j) <- table.(i-1).(j-1)
 			else
 			table.(i).(j) <- 1 + min (min table.(i-1).(j-1) table.(i).(j-1)) table.(i-1).(j)

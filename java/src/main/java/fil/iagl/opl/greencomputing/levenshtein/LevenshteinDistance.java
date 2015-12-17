@@ -1,4 +1,4 @@
-package levenshtein;
+package fil.iagl.opl.greencomputing.levenshtein;
 
 public interface LevenshteinDistance {
 	
