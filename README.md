@@ -2,10 +2,13 @@
 
 ## Purpose and algorithm
 
-This algorithm, implemented in multiple languages, calculate the Levenshtein distance between two words.
+The goal of this project is to compare carbon footprints of multiple languages through programs that execute the same task.
 
-The algorithm :
-* reads the file `dictionary.txt`, containing more than 20000 words from an english dictionary
+This algorithm, implemented in multiple languages, reads a dictionary of words in a text file, and calculates the Levenshtein distance between all consecutive words. This computation is done in two ways : recursively, and iteratively (using dynamic programming).
+
+Every program takes one argument, which is a file path of a dictionary containing one word per line.
+* reads a file containing one word per line
+* for every pair of consecutive words, calculates the Levenshtein distance recursively and iteratively
 
 ## Languages
 * Ada
