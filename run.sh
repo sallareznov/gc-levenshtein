@@ -1,5 +1,5 @@
 jobs &>/dev/null
-./ocaml/levenshtein dico_court.txt --rec &
+./ocaml/levenshtein dictionary.txt --rec &
 new_job_started="$(jobs -n)"
 if [ -n "$new_job_started" ];then
     VAR=$!
