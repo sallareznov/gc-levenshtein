@@ -21,22 +21,23 @@ The design of the program is the following :
 ![UML](uml.png)
 
 ### The languages
-The algorithm is implemented in :
+In alphabetical order, the algorithm is implemented in :
+
 1. Ada
-* C
-* C++
-* COBOL (?)
-* CoffeeScript
-* Eiffel
-* Erlang
-* Go
-* Haskell
-* Java
-* Lisp
-* Ocaml
-* Pascal
-* Perl
-* Python
-* Ruby
-* Scala
-* Smalltalk
+2. C
+3. C++
+4. COBOL (?)
+5. CoffeeScript
+6. Eiffel
+7. Erlang
+8. Go
+9. Haskell
+10. Java
+11. Lisp
+12. Ocaml
+13. Pascal
+14. Perl
+15. Python
+16. Ruby
+17. Scala
+18. Smalltalk
