@@ -1,4 +1,4 @@
-# Carbon footprint of the Levenshtein distance algorithm
+# Carbon footprint of the Levenshtein distance computing algorithm
 
 (You can read the full report with the results by browsing the file [report/report.pdf](https://github.com/sallareznov/gc-levenshtein/blob/master/report/report.pdf)).
 
