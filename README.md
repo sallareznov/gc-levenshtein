@@ -23,21 +23,17 @@ The design of the program is the following :
 ### The languages
 In alphabetical order, the algorithm is implemented in :
 
-1. Ada
-2. C
-3. C++
-4. COBOL (?)
-5. CoffeeScript
-6. Eiffel
-7. Erlang
-8. Go
-9. Haskell
-10. Java
-11. Lisp
-12. Ocaml
-13. Pascal
-14. Perl
-15. Python
-16. Ruby
-17. Scala
-18. Smalltalk
+1. [ ] Ada
+2. [x] C
+3. [ ] C++
+4. [ ] Eiffel
+5. [ ] Go
+6. [ ] Haskell
+7. [x] Java
+8. [x] Ocaml
+9. [ ] Pascal
+10. [ ] Perl
+11. [x] Python
+12. [ ] Ruby
+13. [x] Scala
+14. [ ] Smalltalk
