@@ -1,6 +1,6 @@
 package fil.iagl.opl.greencomputing.levenshtein
 
-trait LevenshteinDistance {
+trait LevenshteinDistanceTechnique {
 
   def name() : String
 

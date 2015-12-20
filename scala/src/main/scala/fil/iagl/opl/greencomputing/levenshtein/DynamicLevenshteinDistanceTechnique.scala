@@ -1,6 +1,6 @@
 package fil.iagl.opl.greencomputing.levenshtein
 
-class DynamicLevenshteinDistance extends LevenshteinDistance {
+class DynamicLevenshteinDistanceTechnique extends LevenshteinDistanceTechnique {
 
   override def name() : String = return "Dynamic distance"
 

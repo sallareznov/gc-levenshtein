@@ -1,6 +1,6 @@
 package fil.iagl.opl.greencomputing.levenshtein
 
-class RecursiveLevenshteinDistance extends LevenshteinDistance {
+class RecursiveLevenshteinDistanceTechnique extends LevenshteinDistanceTechnique {
 
   override def name(): String = return "Recursive distance"
 

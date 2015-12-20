@@ -13,8 +13,9 @@ object Main {
     }
     val filepath = args(0)
     val calculator = new LevenshteinDistanceCalculator
-    val distances = List(new RecursiveLevenshteinDistance, new DynamicLevenshteinDistance)
-    calculator.calculateDistanceFromFile(filepath, distances)
+    val distanceTechniques = List(new RecursiveLevenshteinDistanceTechnique, new DynamicLevenshteinDistanceTechnique)
+    calculator.calculateDistanceFromFile(filepath, distanceTechniques)
+    println("DONE!")
   }
 
 }
