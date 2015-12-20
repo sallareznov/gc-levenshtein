@@ -5,7 +5,8 @@
 ### The goal
 
 The goal of this project is to measure and compare carbon footprints of multiple languages through programs executing the same task.
-### The tool 
+
+### The tool
 To get those metrics, the project uses [PowerAPI](http://powerapi.org), a middleware toolkit for building software-defined power meters. Software-defined power meters are configurable software libraries that can estimate the power consumption of software in real-time.
 
 ### The algorithm
