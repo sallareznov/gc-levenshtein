@@ -22,7 +22,7 @@ class DynamicLevenshteinDistance extends LevenshteinDistance {
         }
       }
     }
-    return table(lengthWord1)(lengthWord2)
+    table(lengthWord1)(lengthWord2)
   }
 
 }
