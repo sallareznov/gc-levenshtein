@@ -5,9 +5,10 @@ OPTOPT	= ocamlopt.opt
 
 #### FILES TO CLEAN ####
 
-MLIS 		= levenshtein.mli
-CMIS		= levenshtein.cmi
-CMXS		= levenshtein.cmx
+MLIS 			= levenshtein.mli
+CMIS			= levenshtein.cmi main.cmi
+CMXS			= levenshtein.cmx main.cmx
+OBJECTS		= levenshtein.o main.o
 BINARIES	= levenshtein
 
 #### RULES TO CALL AT THE COMPILATION ####
@@ -32,17 +33,20 @@ levenshtein.cmi: levenshtein.mli
 levenshtein.cmx: levenshtein.ml
 	$(OPTOPT) -c levenshtein.ml -o levenshtein.cmx
 
+main.cmx: main.ml
+		$(OPTOPT) -c main.ml -o main.cmx
+
 #### BINARIES ####
 
-levenshtein: levenshtein.cmx
-	$(OPTOPT) levenshtein.cmx -o levenshtein
+levenshtein: levenshtein.cmx main.cmx
+	$(OPTOPT) levenshtein.cmx main.cmx -o levenshtein
 
 #### CLEAN ####
 
-.PHONY: $(MLIS) levenshtein.mli clean mrproper
+.PHONY: $(MLIS) clean mrproper
 
 clean:
-	$(RM) -rf $(CMIS) *.cmo $(CMXS) *.o
+	$(RM) -rf $(MLIS) $(CMIS) $(CMXS) $(OBJECTS)
 
 mrproper:
 	$(RM) -rf $(BINARIES) *~
