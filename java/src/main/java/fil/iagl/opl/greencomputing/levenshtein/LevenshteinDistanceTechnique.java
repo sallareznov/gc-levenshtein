@@ -1,6 +1,8 @@
 package fil.iagl.opl.greencomputing.levenshtein;
 
-public interface LevenshteinDistance {
+public interface LevenshteinDistanceTechnique {
+	
+	String name();
 	
 	int calculateDistance(String word1, String word2);
 

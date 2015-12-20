@@ -1,8 +1,13 @@
 package fil.iagl.opl.greencomputing.levenshtein;
 
-public class DynamicLevenshteinDistance implements LevenshteinDistance {
+public class DynamicLevenshteinDistanceTechnique implements LevenshteinDistanceTechnique {
     
-    private int[][] buildTable(String word1, String word2) {
+    @Override
+    public String name() {
+    	return "Dynamic distance";
+    }
+	
+	private int[][] buildTable(String word1, String word2) {
         final int lengthWord1 = word1.length();
         final int lengthWord2 = word2.length();
         final int[][] table = new int[lengthWord1 + 1][lengthWord2 + 1];

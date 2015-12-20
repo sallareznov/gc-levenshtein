@@ -1,7 +1,12 @@
 package fil.iagl.opl.greencomputing.levenshtein;
 
-public class RecursiveLevenshteinDistance implements LevenshteinDistance {
+public class RecursiveLevenshteinDistanceTechnique implements LevenshteinDistanceTechnique {
 
+	@Override
+    public String name() {
+    	return "Recursive distance";
+    }
+	
 	@Override
 	public int calculateDistance(String word1, String word2) {
 		final int lengthWord1 = word1.length();
