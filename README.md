@@ -26,6 +26,20 @@ The design of the program is the following :
 
 ![UML](uml.png)
 
+The algorithm follows this flowchart :
+
+![FlowChart](flowchart.png)
+
+### The program
+
+Every implemented program requires one argument, referencing the dictionary of words (one word per line). For example, to use the program implemented in Ocaml with the dictionary file in the repository, you have to execute the following commands :
+
+```
+$ cd ocaml
+$ make
+$ ./levenshtein ../dictionary.txt
+```
+
 ### The languages
 In alphabetical order, the algorithm is implemented in :
 
