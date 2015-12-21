@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/315d9a57d7284a9d868d933114ddc8f0)](https://www.codacy.com/app/sallareznov/gc-levenshtein)
+
 # Carbon footprint of the Levenshtein distance computing algorithm
 
 (You can read the full report with the results by browsing the file [report/report.pdf](https://github.com/sallareznov/gc-levenshtein/blob/master/report/report.pdf)).
