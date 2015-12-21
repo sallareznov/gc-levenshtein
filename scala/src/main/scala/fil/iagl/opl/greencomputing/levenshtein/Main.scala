@@ -9,13 +9,14 @@ object Main {
   def main(args: Array[String]) : Unit = {
     if (args.length < 1) {
       usage()
-      return
     }
-    val filepath = args(0)
-    val calculator = new LevenshteinDistanceCalculator
-    val distanceTechniques = List(new RecursiveLevenshteinDistanceTechnique, new DynamicLevenshteinDistanceTechnique)
-    calculator.calculateDistanceFromFile(filepath, distanceTechniques)
-    println("DONE!")
+    else {
+      val filepath = args(0)
+      val calculator = new LevenshteinDistanceCalculator
+      val distanceTechniques = List(new RecursiveLevenshteinDistanceTechnique, new DynamicLevenshteinDistanceTechnique)
+      calculator.calculateDistanceFromFile(filepath, distanceTechniques)
+      println("DONE!")
+    }
   }
 
 }

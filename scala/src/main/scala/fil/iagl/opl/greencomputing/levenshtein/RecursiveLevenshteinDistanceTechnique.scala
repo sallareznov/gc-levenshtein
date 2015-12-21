@@ -2,7 +2,7 @@ package fil.iagl.opl.greencomputing.levenshtein
 
 class RecursiveLevenshteinDistanceTechnique extends LevenshteinDistanceTechnique {
 
-  override def name(): String = return "Recursive distance"
+  override def name() : String = "Recursive distance"
 
   override def calculateDistance(word1: String, word2: String): Int = {
     val lengthWord1 = word1.length()
