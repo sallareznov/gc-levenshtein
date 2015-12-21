@@ -40,3 +40,6 @@ In alphabetical order, the algorithm is implemented in :
 12. [ ] Ruby
 13. [x] Scala
 14. [ ] Smalltalk
+
+
+Hook test
