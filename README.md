@@ -1,7 +1,11 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/315d9a57d7284a9d868d933114ddc8f0)](https://www.codacy.com/app/sallareznov/gc-levenshtein)
 [![Code Climate](https://codeclimate.com/github/sallareznov/gc-levenshtein/badges/gpa.svg)](https://codeclimate.com/github/sallareznov/gc-levenshtein)
 
-# Carbon footprint of the Levenshtein distance computing algorithm
+<p align="center">
+  <img alt="EnergyFootprint" src="energy-footprint.jpg">
+</p>
+
+# Energy footprint of the Levenshtein distance computing algorithm
 
 ### Author
 * Salla DIAGNE ([sallareznov](https://github.com/sallareznov))
@@ -10,7 +14,7 @@
 
 ### The goal
 
-The goal of this project is to measure and compare carbon footprints of multiple languages through programs executing the same task.
+The goal of this project is to measure and compare energy footprints of multiple languages through programs executing the same task.
 
 ### The tool
 To get those metrics, the project uses [PowerAPI](http://powerapi.org), a middleware toolkit for building software-defined power meters. Software-defined power meters are configurable software libraries that can estimate the power consumption of software in real-time.
@@ -24,11 +28,15 @@ Every program takes one argument, which is a file path of a dictionary containin
 
 The design of the program is the following :
 
-![UML](uml.png)
+<p align="center">
+  <img alt="UML" src="uml.png">
+</p>
 
 The algorithm follows this flowchart :
 
-![FlowChart](flowchart.png)
+<p align="center">
+  <img alt="FlowChart" src="flowchart.png">
+</p>
 
 ### The program
 
