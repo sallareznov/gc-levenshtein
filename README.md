@@ -51,17 +51,17 @@ $ ./levenshtein ../dictionary.txt
 ### The languages
 In alphabetical order, the algorithm is implemented in :
 
-1. [ ] Ada
-2. [x] C
-3. [ ] C++
-4. [ ] Eiffel
-5. [ ] Go
-6. [ ] Haskell
-7. [x] Java
-8. [x] Ocaml
-9. [ ] Pascal
-10. [ ] Perl
-11. [x] Python
-12. [ ] Ruby
-13. [x] Scala
-14. [ ] Smalltalk
+1. [ ] [Ada](ada)
+2. [x] [C](c)
+3. [ ] [C++](cpp)
+4. [ ] [Eiffel](eiffel)
+5. [ ] [Go](go)
+6. [ ] [Haskell](haskell)
+7. [x] [Java](java)
+8. [x] [Ocaml](ocaml)
+9. [ ] [Pascal](pascal)
+10. [ ] [Perl](perl)
+11. [x] [Python](python)
+12. [ ] [Ruby](ruby)
+13. [x] [Scala](scala)
+14. [ ] [Smalltalk](smalltalk)
