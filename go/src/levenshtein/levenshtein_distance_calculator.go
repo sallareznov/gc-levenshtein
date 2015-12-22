@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"fmt"
+	"strconv"
 )
 
 type LevenshteinDistanceCalculator struct {
@@ -17,8 +18,8 @@ func (calculator LevenshteinDistanceCalculator) calculate_distance_from_file(fil
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	var word1 string = nil
-	var word2 string = nil
+	var word1 string = ""
+	var word2 string = ""
 	for (!scanner.Scan()) {
 		word1 = scanner.Text()
 		if (!scanner.Scan()) {
@@ -33,6 +34,6 @@ func calculate_distance_with_functions_in_list(word1 string, word2 string, dista
 	fmt.Println("Word1 : " + word1)
 	fmt.Println("Word2 : " + word2)
 	for _,distance := range distancesTechniques {
-		fmt.Println(distance.name() + " : " + distance.calculate_distance(word1, word2))
+		fmt.Println(distance.name() + " : " + strconv.Itoa(distance.calculate_distance(word1, word2)))
 	}
 }

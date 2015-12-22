@@ -1,9 +1,8 @@
-package main
+package levenshtein
 
 import "os"
 import "fmt"
 import (
-	"levenshtein"
 	"container/list"
 )
 
@@ -13,11 +12,11 @@ func main() {
 		return
 	}
 	filepath := os.Args[0]
-	recursive_technique := levenshtein.RecursiveLevenshteinDistanceTechnique{}
-	dynamic_technique := levenshtein.DynamicLevenshteinDistanceTechnique{}
+	recursive_technique := RecursiveLevenshteinDistanceTechnique{}
+	dynamic_technique := DynamicLevenshteinDistanceTechnique{}
 	var techniques [2]list.List
 	techniques[0] = recursive_technique
 	techniques[1] = dynamic_technique
-	calculator := levenshtein.LevenshteinDistanceCalculator{}
-	// TODO method call
+	calculator := LevenshteinDistanceCalculator{}
+	calculator.calculate_distance_from_file(filepath, techniques)
 }
