@@ -2,9 +2,6 @@ package levenshtein
 
 import "os"
 import "fmt"
-import (
-	"container/list"
-)
 
 func main() {
 	if len(os.Args) < 2 {
@@ -12,11 +9,10 @@ func main() {
 		return
 	}
 	filepath := os.Args[0]
-	recursive_technique := RecursiveLevenshteinDistanceTechnique{}
-	dynamic_technique := DynamicLevenshteinDistanceTechnique{}
-	var techniques [2]list.List
-	techniques[0] = recursive_technique
-	techniques[1] = dynamic_technique
+	techniques := make([]LevenshteinDistanceTechnique, 2)
+	techniques[0] = RecursiveLevenshteinDistanceTechnique{}
+	techniques[1] = DynamicLevenshteinDistanceTechnique{}
 	calculator := LevenshteinDistanceCalculator{}
+	fmt.Println("Here")
 	calculator.calculate_distance_from_file(filepath, techniques)
 }
