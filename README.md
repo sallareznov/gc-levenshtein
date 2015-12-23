@@ -55,7 +55,7 @@ In alphabetical order, the algorithm is implemented in :
 2. [x] [C](c)
 3. [ ] [C++](cpp)
 4. [ ] [Eiffel](eiffel)
-5. [ ] [Go](go)
+5. [x] [Go](go)
 6. [ ] [Haskell](haskell)
 7. [x] [Java](java)
 8. [x] [Ocaml](ocaml)
