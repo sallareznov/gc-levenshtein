@@ -10,30 +10,31 @@ import (
 type LevenshteinDistanceCalculator struct {
 }
 
-func (calculator LevenshteinDistanceCalculator) calculate_distance_from_file(filepath string, distancesTechniques []LevenshteinDistanceTechnique) {
-	file, err := os.Open("/path/to/file.txt")
+func (calculator LevenshteinDistanceCalculator) CalculateDistanceFromFile(filepath string, distancesTechniques []LevenshteinDistanceTechnique) {
+	file, err := os.Open(filepath)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
+	reader := bufio.NewReader(file)
+	scanner := bufio.NewScanner(reader)
 	var word1 string = ""
 	var word2 string = ""
-	for (!scanner.Scan()) {
+	//fmt.Println("text : " + scanner.Text())
+	for scanner.Scan() {
 		word1 = scanner.Text()
 		if (!scanner.Scan()) {
 			return
 		}
 		word2 = scanner.Text()
-		calculate_distance_with_functions_in_list(word1, word2, distancesTechniques)
+		CalculateDistanceWithFunctionsInList(word1, word2, distancesTechniques)
 	}
 }
 
-func calculate_distance_with_functions_in_list(word1 string, word2 string, distancesTechniques []LevenshteinDistanceTechnique) {
+func CalculateDistanceWithFunctionsInList(word1 string, word2 string, distancesTechniques []LevenshteinDistanceTechnique) {
 	fmt.Println("Word1 : " + word1)
 	fmt.Println("Word2 : " + word2)
 	for _,distance := range distancesTechniques {
-		fmt.Println(distance.name() + " : " + strconv.Itoa(distance.calculate_distance(word1, word2)))
+		fmt.Println(distance.Name() + " : " + strconv.Itoa(distance.CalculateDistance(word1, word2)))
 	}
 }
