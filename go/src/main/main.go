@@ -20,6 +20,6 @@ func main() {
 	techniques[0] = recursiveDistance
 	techniques[1] = dynamicDistance
 	calculator := levenshtein.LevenshteinDistanceCalculator{}
-	fmt.Println("Here")
 	calculator.CalculateDistanceFromFile(filepath, techniques)
+	fmt.Println("DONE !")
 }

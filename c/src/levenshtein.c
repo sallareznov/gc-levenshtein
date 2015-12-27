@@ -4,6 +4,8 @@
 #include <string.h>
 
 int recursive_distance(char *word1, int length_word1, char *word2, int length_word2) {
+  if (strcmp(word1, word2) == 0)
+    return 0;
   if (length_word1 == 0)
     return length_word2;
   else if (length_word2 == 0)
@@ -28,6 +30,8 @@ char **build_table(char *word1, char *word2) {
 }
 
 int dynamic_distance(char *word1, int length_word1, char *word2, int length_word2) {
+  if (strcmp(word1, word2) == 0)
+    return 0;
   return 0;
 }
 
@@ -71,6 +75,6 @@ int main(int argc, char *argv[]) {
   }
   filepath = argv[1];
   calculate_distance_from_file(filepath);
-  printf("DONE\n");
+  printf("DONE !\n");
   return 0;
 }

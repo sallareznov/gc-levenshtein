@@ -5,6 +5,9 @@ class RecursiveLevenshteinDistanceTechnique extends LevenshteinDistanceTechnique
   override def name() : String = "Recursive distance"
 
   override def calculateDistance(word1: String, word2: String): Int = {
+    if (word1 == word2) {
+      0
+    }
     val lengthWord1 = word1.length()
     val lengthWord2 = word2.length()
     if (word1 == word2) {

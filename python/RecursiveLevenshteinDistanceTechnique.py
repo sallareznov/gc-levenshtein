@@ -6,6 +6,8 @@ class RecursiveLevenshteinDistanceTechnique(LevenshteinDistanceTechnique):
         return "Recursive distance"
 
     def calculateDistance(self, word1, word2):
+        if (word1 == word2):
+            return 0
         lengthWord1 = len(word1)
         lengthWord2 = len(word2)
         if (lengthWord1 == 0):

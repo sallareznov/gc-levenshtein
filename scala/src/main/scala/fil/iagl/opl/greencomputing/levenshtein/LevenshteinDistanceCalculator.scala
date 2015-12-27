@@ -11,8 +11,10 @@ class LevenshteinDistanceCalculator {
     val fileIterator = source.getLines()
     while (fileIterator.hasNext) {
       val word1 = fileIterator.next()
-      val word2 = fileIterator.next()
-      calculateDistancesWithFunctionsInList(word1, word2, distanceTechniques)
+      if (fileIterator.hasNext) {
+        val word2 = fileIterator.next()
+        calculateDistancesWithFunctionsInList(word1, word2, distanceTechniques)
+      }
     }
     source.close()
   }

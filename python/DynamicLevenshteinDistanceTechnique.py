@@ -6,6 +6,8 @@ class DynamicLevenshteinDistanceTechnique(LevenshteinDistanceTechnique):
         return "Dynamic distance"
 
     def calculateDistance(self, word1, word2):
+        if (word1 == word2):
+            return 0
         lengthWord1 = len(word1)
         lengthWord2 = len(word2)
         table = [[0]*(lengthWord2 + 1) for i in range(lengthWord1 + 1)]
