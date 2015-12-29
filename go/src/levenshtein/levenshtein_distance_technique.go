@@ -1,8 +1,8 @@
 package levenshtein
 
 type LevenshteinDistanceTechnique interface {
-	name() string
-	calculate_distance(word1 string, word2 string) int
+	Name() string
+	CalculateDistance(word1 string, word2 string) int
 }
 
 func Min(x, y int) int {

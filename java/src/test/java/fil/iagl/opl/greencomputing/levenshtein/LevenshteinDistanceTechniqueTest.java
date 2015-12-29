@@ -27,6 +27,7 @@ public class LevenshteinDistanceTechniqueTest {
 	@Parameters
 	public static Collection<Object[]> data() {
 		final Object[][] data = {
+			{ "something", "something", 0 },
 			{ "this", "has", 2 },
 			{ "book", "back", 2 },
 			{ "kitten", "sitting", 3 },

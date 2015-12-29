@@ -6,9 +6,12 @@ public class RecursiveLevenshteinDistanceTechnique implements LevenshteinDistanc
     public String name() {
     	return "Recursive distance";
     }
-	
+
 	@Override
 	public int calculateDistance(String word1, String word2) {
+		if (word1.equals(word2)) {
+			return 0;
+		}
 		final int lengthWord1 = word1.length();
 		final int lengthWord2 = word2.length();
 		if (lengthWord1 == 0)

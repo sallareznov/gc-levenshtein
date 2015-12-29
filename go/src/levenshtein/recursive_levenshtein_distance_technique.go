@@ -1,17 +1,16 @@
 package levenshtein
-import (
-	"strings"
-)
+import "strings"
+
 
 type RecursiveLevenshteinDistanceTechnique struct {
 }
 
-func (technique RecursiveLevenshteinDistanceTechnique) name() string {
+func (technique RecursiveLevenshteinDistanceTechnique) Name() string {
   return "Recursive distance"
 }
 
-func (technique RecursiveLevenshteinDistanceTechnique) calculate_distance(word1 string, word2 string) int {
-		if strings.EqualFold(word1, word2) {
+func (technique RecursiveLevenshteinDistanceTechnique) CalculateDistance(word1 string, word2 string) int {
+		if (strings.EqualFold(word1, word2)) {
 			return 0
 		}
 		lengthWord1 := len(word1)
@@ -23,12 +22,12 @@ func (technique RecursiveLevenshteinDistanceTechnique) calculate_distance(word1 
 		} else {
 			firstLetterWord1 := word1[0]
 			firstLetterWord2 := word2[0]
-			subWord1 := word1[:1]
-			subWord2 := word2[:1]
+			subWord1 := word1[1:]
+			subWord2 := word2[1:]
 			if firstLetterWord1 == firstLetterWord2 {
-				return RecursiveLevenshteinDistanceTechnique.calculate_distance(technique, subWord1, subWord2)
+				return RecursiveLevenshteinDistanceTechnique.CalculateDistance(technique, subWord1, subWord2)
 			} else {
-				return 1 + Min(Min(RecursiveLevenshteinDistanceTechnique.calculate_distance(technique, word1, subWord2), RecursiveLevenshteinDistanceTechnique.calculate_distance(technique, subWord1, word2)), RecursiveLevenshteinDistanceTechnique.calculate_distance(technique, subWord1, subWord2))
+				return 1 + Min(Min(RecursiveLevenshteinDistanceTechnique.CalculateDistance(technique, word1, subWord2), RecursiveLevenshteinDistanceTechnique.CalculateDistance(technique, subWord1, word2)), RecursiveLevenshteinDistanceTechnique.CalculateDistance(technique, subWord1, subWord2))
 			}
 		}
 }

@@ -4,6 +4,7 @@ let test_same_distance_for_all_techniques test_ctxt =
   let distance_techniques = [|Levenshtein.recursive_distance; Levenshtein.dynamic_distance|]
   in
   for i = 0 to Array.length distance_techniques - 1 do
+    assert_equal 0 (distance_techniques.(i) "something" "something");
     assert_equal 2 (distance_techniques.(i) "this" "has");
     assert_equal 2 (distance_techniques.(i) "book" "back");
     assert_equal 3 (distance_techniques.(i) "sitting" "kitten");

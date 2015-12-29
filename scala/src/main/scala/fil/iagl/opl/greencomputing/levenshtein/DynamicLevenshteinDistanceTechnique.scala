@@ -5,6 +5,9 @@ class DynamicLevenshteinDistanceTechnique extends LevenshteinDistanceTechnique {
   override def name() : String = "Dynamic distance"
 
   override def calculateDistance(word1: String, word2: String): Int = {
+    if (word1 == word2) {
+      0
+    }
     val lengthWord1 = word1.length()
     val lengthWord2 = word2.length()
     val table = Array.ofDim[Int](lengthWord1 + 1, lengthWord2 + 1)

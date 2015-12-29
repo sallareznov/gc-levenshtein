@@ -21,7 +21,7 @@ class LevenshteinDistanceTechniqueTest(unittest.TestCase):
 
 
 def getTestDataSuite():
-    wordsAndDistances = [ ["this", "has", 2], ["book", "back", 2], ["kitten", "sitting", 3], ["meilenstein", "levenshtein", 4], ["something", "", 9], ["", "something", 9] ]
+    wordsAndDistances = [ ["something", "something", 0], ["this", "has", 2], ["book", "back", 2], ["kitten", "sitting", 3], ["meilenstein", "levenshtein", 4], ["something", "", 9], ["", "something", 9] ]
     return unittest.TestSuite([LevenshteinDistanceTechniqueTest(wordsAndDistance[0], wordsAndDistance[1], wordsAndDistance[2]) for wordsAndDistance in wordsAndDistances])
 
 if __name__ == '__main__':

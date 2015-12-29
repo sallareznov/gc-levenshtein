@@ -6,23 +6,23 @@ import (
 type DynamicLevenshteinDistanceTechnique struct {
 }
 
-func (technique DynamicLevenshteinDistanceTechnique) name() string {
+func (technique DynamicLevenshteinDistanceTechnique) Name() string {
   return "Dynamic distance"
 }
 
-func (technique DynamicLevenshteinDistanceTechnique) calculate_distance(word1 string, word2 string) int {
+func (technique DynamicLevenshteinDistanceTechnique) CalculateDistance(word1 string, word2 string) int {
 	if (strings.EqualFold(word1, word2)) {
   		return 0
   	}
 	lengthWord1 := len(word1)
 	lengthWord2 := len(word2)
-	table := make([][]int, lengthWord1)
+	table := make([][]int, lengthWord1 + 1)
 	for i := range table {
-		table[i] = make([]int, lengthWord2)
+		table[i] = make([]int, lengthWord2 + 1)
 	}
 
-	for i := 0 ; i < lengthWord2 ; i++ {
-		for j := 0 ; j < lengthWord2 ; j++ {
+	for i := 0 ; i <= lengthWord1 ; i++ {
+		for j := 0 ; j <= lengthWord2 ; j++ {
 			if i == 0 {
 				table[i][j] = j
 			} else if j == 0 {

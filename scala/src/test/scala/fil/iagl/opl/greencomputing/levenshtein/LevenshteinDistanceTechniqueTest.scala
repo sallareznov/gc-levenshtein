@@ -7,6 +7,7 @@ class LevenshteinDistanceTechniqueTest extends FlatSpec with LevenshteinDistance
     val distanceTechniques = Array(new RecursiveLevenshteinDistanceTechnique, new DynamicLevenshteinDistanceTechnique)
 
     distanceTechniques.foreach(distanceTechnique => {
+      distanceTechnique.name() should behave like sameDistanceForAllTechniques(distanceTechnique, "something", "something", 0)
       distanceTechnique.name() should behave like sameDistanceForAllTechniques(distanceTechnique, "this", "has", 2)
       distanceTechnique.name() should behave like sameDistanceForAllTechniques(distanceTechnique, "book", "back", 2)
       distanceTechnique.name() should behave like sameDistanceForAllTechniques(distanceTechnique, "kitten", "sitting", 3)
