@@ -13,4 +13,4 @@ if __name__ == "__main__":
         dynamicTechnique = DynamicLevenshteinDistanceTechnique()
         distanceTechniques = [recursiveTechnique, dynamicTechnique]
         calculator.calculateDistanceFromFile(filepath, distanceTechniques)
-        print "DONE !"
+        print("DONE !")

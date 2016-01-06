@@ -20,8 +20,8 @@ func (calculator LevenshteinDistanceCalculator) CalculateDistanceFromFile(filepa
 	scanner := bufio.NewScanner(reader)
 	var word1 string = ""
 	var word2 string = ""
-	//fmt.Println("text : " + scanner.Text())
 	for scanner.Scan() {
+		//fmt.Println("text : " + scanner.Text())
 		word1 = scanner.Text()
 		if (!scanner.Scan()) {
 			return

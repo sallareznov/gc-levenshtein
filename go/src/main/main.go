@@ -15,8 +15,8 @@ func main() {
 	techniques := make([]levenshtein.LevenshteinDistanceTechnique, 2)
 	recursiveDistance := levenshtein.RecursiveLevenshteinDistanceTechnique{}
 	dynamicDistance := levenshtein.DynamicLevenshteinDistanceTechnique{}
-	fmt.Println(levenshtein.RecursiveLevenshteinDistanceTechnique{}.CalculateDistance("carie", "durite"))
-	fmt.Println(levenshtein.DynamicLevenshteinDistanceTechnique{}.CalculateDistance("carie", "durite"))
+	//fmt.Println(levenshtein.RecursiveLevenshteinDistanceTechnique{}.CalculateDistance("carie", "durite"))
+	//fmt.Println(levenshtein.DynamicLevenshteinDistanceTechnique{}.CalculateDistance("carie", "durite"))
 	techniques[0] = recursiveDistance
 	techniques[1] = dynamicDistance
 	calculator := levenshtein.LevenshteinDistanceCalculator{}
