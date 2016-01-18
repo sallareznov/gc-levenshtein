@@ -1,6 +1,6 @@
 #!/bin/bash
 jobs &>/dev/null
-java -jar target/scala-2.11/levenshtein.jar ../dictionary_EN.txt &
+./bin/levenshtein ../dictionary_EN.txt &
 new_job_started="$(jobs -n)"
 if [ -n "$new_job_started" ];then
     VAR=$!
@@ -9,4 +9,4 @@ else
 fi
 echo $VAR
 ../../powerapi-iagl-3.3/bin/powerapi 60 500 $VAR
-mv powerapi.out ../output/powerapi_scala.out
+mv powerapi.out ../output/powerapi_c.out
