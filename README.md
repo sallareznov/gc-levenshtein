@@ -52,7 +52,6 @@ $ ./levenshtein ../dictionary.txt
 In alphabetical order, the algorithm is implemented in :
 
 1. [x] [C](c)
-2. [ ] [C++](cpp)
 3. [x] [Go](go)
 4. [ ] [Haskell](haskell)
 5. [x] [Java](java)
@@ -60,4 +59,3 @@ In alphabetical order, the algorithm is implemented in :
 7. [x] [Python](python)
 8. [ ] [Ruby](ruby)
 9. [x] [Scala](scala)
-10. [ ] [Smalltalk](smalltalk)
