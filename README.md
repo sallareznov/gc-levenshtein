@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/sallareznov/gc-levenshtein/badges/gpa.svg)](https://codeclimate.com/github/sallareznov/gc-levenshtein)
 
 <p align="center">
-  <img alt="EnergyFootprint" src="energy-footprint.jpg">
+  <img alt="EnergyFootprint" src="green_it.jpg">
 </p>
 
 # Energy footprint of the Levenshtein distance computing algorithm
