@@ -10,7 +10,7 @@
 ### Author
 * Salla DIAGNE ([sallareznov](https://github.com/sallareznov))
 
-(You can read the full report with the results by browsing the file [report/report.pdf](https://github.com/sallareznov/gc-levenshtein/blob/master/report/report.pdf)).
+(You can read the full report with the results by browsing the repository https://github.com/sallareznov/gc-levenshtein-report ([report/report.pdf](https://github.com/sallareznov/gc-levenshtein-report/blob/master/report.pdf))).
 
 ### The goal
 
