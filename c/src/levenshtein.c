@@ -12,11 +12,13 @@ int recursive_distance(char *word1, int length_word1, char *word2, int length_wo
     return length_word1;
   else {
     char first_letter_word1, first_letter_word2;
-    char subword1[length_word1 - 1], subword2[length_word2 - 1];
+    char subword1[length_word1], subword2[length_word2];
     first_letter_word1 = word1[0];
     first_letter_word2 = word2[0];
-    strncpy(subword1, word1 + 1, length_word1 - 1);
-    strncpy(subword2, word2 + 1, length_word2 - 1);
+    memcpy(subword1, &word1[1], length_word1 - 1);
+    memcpy(subword2, &word2[1], length_word2 - 1);
+    subword1[length_word1 - 1] = '\0';
+    subword1[length_word2 - 1] = '\0';
     if (first_letter_word1 == first_letter_word2)
       return recursive_distance(subword1, length_word1 - 1, subword2, length_word2 - 1);
     else {
@@ -25,41 +27,74 @@ int recursive_distance(char *word1, int length_word1, char *word2, int length_wo
   }
 }
 
-char **build_table(char *word1, char *word2) {
-  return NULL;
-}
-
 int dynamic_distance(char *word1, int length_word1, char *word2, int length_word2) {
-  if (strcmp(word1, word2) == 0)
-    return 0;
-  return 0;
+  int table[length_word1 + 1][length_word2 + 1], i, j;
+
+  for (i = 0 ; i <= length_word1 ; i++) {
+    for (j = 0 ; j <= length_word2 ; j++) {
+      if (i == 0)
+        table[i][j] = j;
+      else if (j == 0)
+        table[i][j] = i;
+      else {
+        if (word1[i - 1] == word2[j - 1])
+          table[i][j] = table[i - 1][j - 1];
+        else
+          table[i][j] = 1 + MIN(MIN(table[i - 1][j - 1], table[i][j - 1]), table[i - 1][j]);
+      }
+    }
+  }
+  return table[length_word1][length_word2];
 }
 
-void get_word(FILE *fd, char *word, int *index) {
-  char c;
+int string_length(char *s) {
+   int c = 0;
 
-  *index = 0;
-  while ((c = fgetc(fd)) != '\n') {
-    printf("%c\n", c);
-    word[*index++] = c;
-  }
+   while(*(s+c))
+      c++;
+
+   return c;
+}
+
+void trim(char *str)
+{
+    char *ptr = str;
+    while(*ptr == ' ' || *ptr == '\t' || *ptr == '\r' || *ptr == '\n') ++ptr;
+
+    char *end = ptr;
+    while(*end) ++end;
+
+    if(end > ptr)
+    {
+        for(--end; end >= ptr && (*end == ' ' || *end == '\t' || *end == '\r' || *end == '\n'); --end);
+    }
+
+    memmove(str, ptr, end-ptr);
+    str[end-ptr] = 0;
 }
 
 void calculate_distance_from_file(char *filepath) {
   FILE *fd;
-  char *word1, *word2;
+  char word1[256], word2[256];
   int length_word1, length_word2;
 
   fd = fopen(filepath, "r");
-  word1 = malloc(sizeof(char *));
-  word2 = malloc(sizeof(char *));
-  get_word(fd, word1, &length_word1);
-  get_word(fd, word2, &length_word2);
-  printf("Word1 : %s\n", word1);
-  printf("Word2 : %s\n", word2);
-  printf("Recursive distance : %d\n", recursive_distance(word1, length_word1, word2, length_word2));
-  recursive_distance(word1, length_word1, word2, length_word2);
-  printf("\n");
+  while (fgets(word1, sizeof(word1), fd)) {
+    if (!fgets(word2, sizeof(word2), fd)) {
+      break;
+    }
+    trim(word1);
+    trim(word2);
+    printf("Word1 : %s\n", word1);
+    printf("Word2 : %s\n", word2);
+    length_word1 = strlen(word1);
+    length_word2 = strlen(word2);
+    printf("Recursive distance : %d\n", recursive_distance(word1, length_word1, word2, length_word2));
+    printf("Dynamic distance : %d\n", dynamic_distance(word1, length_word1, word2, length_word2));
+    printf("\n");
+    memset(word1, 0, strlen(word1));
+    memset(word2, 0, strlen(word2));
+  }
 }
 
 void usage() {
