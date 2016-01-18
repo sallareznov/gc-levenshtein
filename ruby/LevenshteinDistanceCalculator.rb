@@ -1,8 +1,9 @@
+require "./LevenshteinDistanceCalculator.rb"
+
 class LevenshteinDistanceCalculator
 
   def calculateDistanceFromFile(filepath, techniques)
     lines = IO.readlines(filepath)
-    technique = RecursiveLevenshteinDistanceTechnique.new
     for index in 0..(lines.length - 1)
       word1 = lines[index]
       word2 = lines[index + 1]
