@@ -1,5 +1,5 @@
 CC	= gcc
-CFLAGS	= -Wall -Werror -ansi -pedantic -std=c99
+CFLAGS	= -Wall -Werror -ansi -pedantic -std=c99 -O3
 CFLAGS += -D_XOPEN_SOURCE=500
 CFLAGS += -g
 
