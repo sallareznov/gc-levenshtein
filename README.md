@@ -51,9 +51,9 @@ $ ./levenshtein ../dictionary.txt
 ### The languages
 In alphabetical order, the algorithm is implemented in :
 
-1. C
-2. Go
-3. Java
-4. Ocaml
-5. Python
-6. Scala
+* C
+* Go
+* Java
+* Ocaml
+* Python
+* Scala
