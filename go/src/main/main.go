@@ -11,7 +11,7 @@ func main() {
 		fmt.Println("Browse the file README.md at the root of the project to know how to use this program")
 		return
 	}
-	filepath := os.Args[0]
+	filepath := os.Args[1]
 	techniques := make([]levenshtein.LevenshteinDistanceTechnique, 2)
 	recursiveDistance := levenshtein.RecursiveLevenshteinDistanceTechnique{}
 	dynamicDistance := levenshtein.DynamicLevenshteinDistanceTechnique{}

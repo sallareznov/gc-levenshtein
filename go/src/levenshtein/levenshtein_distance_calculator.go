@@ -21,7 +21,6 @@ func (calculator LevenshteinDistanceCalculator) CalculateDistanceFromFile(filepa
 	var word1 string = ""
 	var word2 string = ""
 	for scanner.Scan() {
-		//fmt.Println("text : " + scanner.Text())
 		word1 = scanner.Text()
 		if (!scanner.Scan()) {
 			return
@@ -37,4 +36,5 @@ func CalculateDistanceWithFunctionsInList(word1 string, word2 string, distancesT
 	for _,distance := range distancesTechniques {
 		fmt.Println(distance.Name() + " : " + strconv.Itoa(distance.CalculateDistance(word1, word2)))
 	}
+	fmt.Println()
 }
