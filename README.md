@@ -10,7 +10,7 @@
 ### Author
 * Salla DIAGNE ([sallareznov](https://github.com/sallareznov))
 
-(You can read the full report with the results by browsing the file [report/report.pdf](https://github.com/sallareznov/gc-levenshtein/blob/master/report/report.pdf)).
+(You can read the full report with the results by browsing the repository https://github.com/sallareznov/gc-levenshtein-report ([report/report.pdf](https://github.com/sallareznov/gc-levenshtein-report/blob/master/report.pdf))).
 
 ### The goal
 
@@ -52,7 +52,6 @@ $ ./levenshtein ../dictionary.txt
 In alphabetical order, the algorithm is implemented in :
 
 1. [x] [C](c)
-2. [ ] [C++](cpp)
 3. [x] [Go](go)
 4. [ ] [Haskell](haskell)
 5. [x] [Java](java)
@@ -60,4 +59,3 @@ In alphabetical order, the algorithm is implemented in :
 7. [x] [Python](python)
 8. [ ] [Ruby](ruby)
 9. [x] [Scala](scala)
-10. [ ] [Smalltalk](smalltalk)
